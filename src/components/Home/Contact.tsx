@@ -59,8 +59,8 @@ const Contact: React.FC = () => {
           <div className="flex items-center gap-2">
             <AiOutlineCheckCircle className="text-green-500 text-xl" />
             <span>
-              Your message has been sent! I’ll get back to you shortly. You can
-              also book a discovery call using the calendar button at the
+              Your message has been sent! I&apos;ll get back to you shortly. You
+              can also book a discovery call using the calendar button at the
               bottom-right.
             </span>
           </div>,
@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
       } else {
         setErrorMessage(result || "Failed to send the message.");
       }
-    } catch (error) {
+    } catch (_) {
       setErrorMessage("Network error. Please try again.");
     } finally {
       setLoading(false);

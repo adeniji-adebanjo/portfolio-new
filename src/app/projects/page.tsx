@@ -15,7 +15,7 @@ export default function Projects() {
           My Recent <span className="text-purple-400">Works</span>
         </h1>
         <p className="text-center text-gray-300 mb-12">
-          Here are a few projects I've worked on recently.
+          Here are a few projects I&apos;ve worked on recently.
         </p>
 
         {/* Grid of Projects */}

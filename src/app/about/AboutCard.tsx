@@ -18,15 +18,15 @@ const AboutCard: React.FC = () => {
               Lagos, Nigeria.
             </span>
             <br />
-            Hey there! I'm thrilled to share that I'm currently rocking the role
-            of a Frontend Training Instructor at Innkeeper Talent Accelerator! I
-            get to unleash my passion for tech and teaching every day while
-            helping others level up their skills.
+            Hey there! I&apos;m thrilled to share that I&apos;m currently
+            rocking the role of a Frontend Training Instructor at Innkeeper
+            Talent Accelerator! I get to unleash my passion for tech and
+            teaching every day while helping others level up their skills.
             <br />
             <br />
-            I'm always up for a challenge, and I believe that with the right
-            mindset and determination, anything is possible. So let's keep
-            learning, growing, and having fun along the way!
+            I&apos;m always up for a challenge, and I believe that with the
+            right mindset and determination, anything is possible. So let&apos;s
+            keep learning, growing, and having fun along the way!
             <br />
             Apart from coding, some other activities that I love to do!
           </p>
@@ -43,7 +43,7 @@ const AboutCard: React.FC = () => {
           </ul>
 
           <p className="text-purple-300 mt-4">
-            "Strive to build things that make a difference!"
+            &quot;Strive to build things that make a difference!&quot;
           </p>
           <footer className="text-sm">— Adebanjo</footer>
         </blockquote>

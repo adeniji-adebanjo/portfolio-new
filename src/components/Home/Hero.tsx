@@ -6,6 +6,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 import Contact from "./Contact";
 import Particle from "@/components/Particle";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -28,7 +29,7 @@ export default function Hero() {
               </span>
             </h1>
             <h1 className="text-3xl md:text-4xl font-bold mb-6">
-              I'M
+              I&apos;M
               <strong className="text-purple-400"> ADEBANJO ADENIJI</strong>
             </h1>
 
@@ -52,7 +53,7 @@ export default function Hero() {
 
           {/* Right image */}
           <div className="flex justify-center md:justify-end">
-            <img
+            <Image
               src="https://res.cloudinary.com/ds83mhjcm/image/upload/v1710931324/home-main_agqoq4.svg"
               alt="home-pic"
               className="max-h-[450px] w-auto"
@@ -106,7 +107,7 @@ export default function Hero() {
           {/* Avatar */}
           <div className="flex justify-center md:justify-end pt-8 md:pt-0">
             <Tilt>
-              <img
+              <Image
                 src="https://res.cloudinary.com/ds83mhjcm/image/upload/v1710931535/Adebanjo_portfolio/avatar_kbhezl.svg"
                 alt="avatar"
                 className="max-w-xs md:max-w-sm"

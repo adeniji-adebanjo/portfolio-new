@@ -6,6 +6,7 @@ import Techstack from "./Techstack";
 import Toolstack from "./Toolstack";
 import Particle from "@/components/Particle";
 import Github from "./Github";
+import Image from "next/image";
 
 const About: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="md:w-1/3 pt-12 md:pt-32">
-            <img
+            <Image
               src="https://res.cloudinary.com/ds83mhjcm/image/upload/v1709396526/Adebanjo_portfolio/about_kauvc9.png"
               alt="about"
               className="w-full object-contain"

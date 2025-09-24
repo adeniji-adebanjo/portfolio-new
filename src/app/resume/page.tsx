@@ -11,22 +11,30 @@ const ResumeComponent: React.FC = () => {
   const handleDownload = async () => {
     setError(null);
     setDownloading(true);
+
     try {
       const res = await fetch("/downloads/Adebanjo_Resume.pdf");
       if (!res.ok)
         throw new Error("Failed to fetch PDF (status: " + res.status + ")");
+
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
+
       const a = document.createElement("a");
       a.href = url;
       a.download = "Adebanjo_Resume.pdf";
       document.body.appendChild(a);
       a.click();
       a.remove();
+
       URL.revokeObjectURL(url);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      setError(err?.message || "An unknown error occurred while downloading.");
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred while downloading.");
+      }
     } finally {
       setDownloading(false);
     }
