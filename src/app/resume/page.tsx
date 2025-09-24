@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { AiOutlineDownload, AiOutlineLoading3Quarters } from "react-icons/ai";
+import Link from "next/link";
 
 const ResumeComponent: React.FC = () => {
   const [downloading, setDownloading] = useState(false);
@@ -51,30 +52,25 @@ const ResumeComponent: React.FC = () => {
             <span>Lagos, Nigeria</span>
           </div>
           <div className="mt-3 flex gap-3 text-sm">
-            <a
-              href="https://adebanjo-portfolio.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm underline"
-            >
+            <Link href="/" rel="noreferrer" className="text-sm underline">
               Portfolio
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://github.com/adeniji-adebanjo"
               target="_blank"
               rel="noreferrer"
               className="text-sm underline"
             >
               GitHub
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.linkedin.com/in/adebanjoadeniji/"
               target="_blank"
               rel="noreferrer"
               className="text-sm underline"
             >
               LinkedIn
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -140,6 +136,42 @@ const ResumeComponent: React.FC = () => {
               <li>
                 Google Digital Skills for Africa —{" "}
                 <span className="text-slate-500">Oct 2020</span>
+              </li>
+            </ul>
+          </div>
+          <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800">
+            <h3 className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+              Live Projects
+            </h3>
+            <ul className="mt-2 text-sm text-slate-600 dark:text-slate-300 space-y-2">
+              <li>
+                <strong>Adebanjo Classroom</strong>: a curated LMS for persons
+                transitioning into tech —{" "}
+                <span className="text-slate-500">
+                  <Link
+                    href="https://adebanjoclassroom.vercel.app"
+                    target="_blank"
+                  >
+                    view
+                  </Link>
+                </span>
+              </li>
+              <li>
+                <strong>SA Couture NG</strong>: a fashion e-commerce platform —{" "}
+                <span className="text-slate-500">
+                  <Link href="https://sacoutureng.com" target="_blank">
+                    view
+                  </Link>
+                </span>
+              </li>
+              <li>
+                <strong>Elite CV Builder App</strong>: a tool for creating
+                professional CVs —{" "}
+                <span className="text-slate-500">
+                  <Link href="https://elitecvbuilder.com" target="_blank">
+                    view
+                  </Link>
+                </span>
               </li>
             </ul>
           </div>
@@ -238,6 +270,13 @@ const ResumeComponent: React.FC = () => {
               <li>Asynchronous collaboration using Slack and Loom.</li>
               <li>
                 Investigative mindset for resolving complex front-end issues.
+              </li>
+              <li>
+                Strong understanding of web performance optimization techniques.
+              </li>
+              <li>
+                Effective communication of technical concepts to non-technical
+                stakeholders.
               </li>
             </ul>
           </section>

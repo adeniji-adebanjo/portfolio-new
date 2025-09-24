@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AppWrapper from "@/components/AppWrapper";
 import ScrollToTop from "@/components/ScrollToTop";
+import Particle from "@/components/Particle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AppWrapper>
+          <Particle />
           <Navbar />
           <ScrollToTop />
           <main>{children}</main>
