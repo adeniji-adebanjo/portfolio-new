@@ -11,25 +11,25 @@ import {
 import { SiFirebase, SiNextdotjs, SiPostgresql } from "react-icons/si";
 
 const icons = [
-  { id: 1, Icon: DiJavascript1 },
-  { id: 2, Icon: DiNodejs },
-  { id: 3, Icon: DiReact },
-  { id: 4, Icon: DiMongodb },
-  { id: 5, Icon: SiNextdotjs },
-  { id: 6, Icon: DiGit },
-  { id: 7, Icon: SiFirebase },
-  { id: 8, Icon: SiPostgresql },
+  <DiJavascript1 key="js" />,
+  <DiNodejs key="node" />,
+  <DiReact key="react" />,
+  <DiMongodb key="mongo" />,
+  <SiNextdotjs key="next" />,
+  <DiGit key="git" />,
+  <SiFirebase key="firebase" />,
+  <SiPostgresql key="postgres" />,
 ];
 
 const Techstack: React.FC = () => {
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center pb-12">
-      {icons.map(({ id, Icon }) => (
+    <div className="flex flex-wrap justify-center gap-6 pb-12">
+      {icons.map((icon, index) => (
         <div
-          key={id}
-          className="flex items-center justify-center text-5xl md:text-6xl text-gray-700 dark:text-gray-200 hover:text-purple-500 transition-colors duration-300"
+          key={index}
+          className="text-6xl p-4 border border-purple-400/60 rounded-md shadow-md opacity-90 hover:scale-105 hover:border-purple-400 transition-transform"
         >
-          <Icon />
+          {icon}
         </div>
       ))}
     </div>
