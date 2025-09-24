@@ -6,7 +6,8 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AppWrapper from "@/components/AppWrapper"; // <-- added
+import AppWrapper from "@/components/AppWrapper";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
       >
         <AppWrapper>
           <Navbar />
+          <ScrollToTop />
           <main>{children}</main>
           <Footer />
         </AppWrapper>

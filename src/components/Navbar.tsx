@@ -11,7 +11,7 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-// import BookSession from "./BookSession";
+import BookSession from "./BookSession";
 
 export default function Navbar() {
   const [expanded, setExpanded] = useState(false);
@@ -120,7 +120,7 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      {/* <BookSession /> */}
+      <BookSession />
     </>
   );
 }

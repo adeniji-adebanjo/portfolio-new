@@ -9,7 +9,9 @@ const Pre: React.FC<PreProps> = ({ load }) => {
   return (
     <div
       className={`fixed inset-0 z-[999999] transition-opacity duration-500 ${
-        load ? "opacity-100" : "opacity-0"
+        load
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
       } bg-[#0c0513] bg-no-repeat bg-center`}
       style={{
         backgroundImage:

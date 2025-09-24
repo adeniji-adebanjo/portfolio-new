@@ -1,19 +1,19 @@
 "use client";
 
-import React from "react";
-import Particles from "react-tsparticles";
-import type { Engine } from "tsparticles-engine";
+import React, { useCallback } from "react";
+import Particles from "@tsparticles/react";
+import type { Engine } from "@tsparticles/engine";
 import { loadFull } from "tsparticles";
 
 const Particle: React.FC = () => {
-  //   const particlesInit = async (engine: Engine): Promise<void> => {
-  //     await loadFull(engine);
-  //   };
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadFull(engine); // loads all tsparticles features
+  }, []);
 
   return (
     <Particles
       id="tsparticles"
-      //   init={particlesInit}
+      init={particlesInit}
       options={{
         fullScreen: {
           enable: true,
@@ -24,42 +24,36 @@ const Particle: React.FC = () => {
             value: 160,
             density: {
               enable: true,
-              area: 1500,
+              height: 1000,
+              width: 1000,
             },
           },
-          links: {
-            enable: false,
-            opacity: 0.03,
+          color: {
+            value: ["#c084fc", "#a855f7", "#9333ea"],
           },
           move: {
             direction: "right",
             speed: 0.05,
           },
-          size: {
-            value: 1,
-          },
           opacity: {
+            value: 0.5,
             animation: {
               enable: true,
               speed: 1,
-              minimumValue: 0.05,
             },
           },
+          size: { value: 1 },
         },
         interactivity: {
           events: {
-            onClick: {
-              enable: true,
-              mode: "push",
-            },
+            onClick: { enable: true, mode: "push" },
           },
           modes: {
-            push: {
-              quantity: 1,
-            },
+            push: { quantity: 1 },
           },
         },
         detectRetina: true,
+        background: { color: "transparent" },
       }}
     />
   );
