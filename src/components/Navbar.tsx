@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { CgGitFork, CgFileDocument } from "react-icons/cg";
 import { ImBlog } from "react-icons/im";
 import {
@@ -16,14 +17,38 @@ import BookSession from "./BookSession";
 export default function Navbar() {
   const [expanded, setExpanded] = useState(false);
   const [navColour, setNavColour] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setNavColour(window.scrollY >= 20);
-    };
+    const handleScroll = () => setNavColour(window.scrollY >= 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { href: "/", label: "Home", icon: <AiOutlineHome className="mr-1" /> },
+    {
+      href: "/about",
+      label: "About",
+      icon: <AiOutlineUser className="mr-1" />,
+    },
+    {
+      href: "/projects",
+      label: "Projects",
+      icon: <AiOutlineFundProjectionScreen className="mr-1" />,
+    },
+    {
+      href: "/resume",
+      label: "Resume",
+      icon: <CgFileDocument className="mr-1" />,
+    },
+    {
+      href: "https://adebanjowrites.medium.com",
+      label: "Blogs",
+      icon: <ImBlog className="mr-1" />,
+      external: true,
+    },
+  ];
 
   return (
     <>
@@ -34,7 +59,8 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between py-3 px-6">
+        {/* <div className="container mx-auto flex items-center justify-between py-3 px-6"> */}
+        <div className="mx-auto w-full max-w-6xl flex items-center justify-between py-3 px-6">
           <Link href="/" className="flex items-center">
             <Image
               src="/myLogo.png"
@@ -45,7 +71,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Toggle button for mobile */}
+          {/* Mobile toggle */}
           <button
             className="md:hidden flex flex-col space-y-1"
             onClick={() => setExpanded(!expanded)}
@@ -70,53 +96,52 @@ export default function Navbar() {
           {/* Nav links */}
           <div
             className={`${
-              expanded ? "block" : "hidden"
-            } md:flex md:items-center space-y-4 md:space-y-0 md:space-x-6 absolute md:static top-14 left-0 w-full md:w-auto bg-gray-900 md:bg-transparent p-4 md:p-0`}
+              expanded
+                ? "flex flex-col items-start space-y-4"
+                : "hidden md:flex md:items-center md:space-x-12"
+            } absolute md:static top-14 left-0 w-full md:w-auto bg-gray-900 md:bg-transparent p-4 md:p-0`}
           >
-            <Link
-              href="/"
-              className="flex items-center hover:text-purple-400"
-              onClick={() => setExpanded(false)}
-            >
-              <AiOutlineHome className="mr-1" /> Home
-            </Link>
-            <Link
-              href="/about"
-              className="flex items-center hover:text-purple-400"
-              onClick={() => setExpanded(false)}
-            >
-              <AiOutlineUser className="mr-1" /> About
-            </Link>
-            <Link
-              href="/projects"
-              className="flex items-center hover:text-purple-400"
-              onClick={() => setExpanded(false)}
-            >
-              <AiOutlineFundProjectionScreen className="mr-1" /> Projects
-            </Link>
-            <Link
-              href="/resume"
-              className="flex items-center hover:text-purple-400"
-              onClick={() => setExpanded(false)}
-            >
-              <CgFileDocument className="mr-1" /> Resume
-            </Link>
-            <a
-              href="https://adebanjowrites.medium.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center hover:text-purple-400"
-            >
-              <ImBlog className="mr-1" /> Blogs
-            </a>
-            <a
-              href="https://github.com/adeniji-adebanjo/Portfolio"
-              target="_blank"
-              className="ml-3 flex items-center space-x-1 border border-purple-500 px-3 py-1 rounded-lg hover:bg-purple-600 transition"
-            >
-              <CgGitFork />
-              <AiFillStar />
-            </a>
+            {navLinks.map((link) => {
+              const isActive = !link.external && pathname === link.href;
+
+              return link.external ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  className="inline-flex items-center gap-1 text-white hover:text-purple-400 border-b-4 border-transparent hover:border-purple-500 rounded-b-md transition-all duration-300 pb-1"
+                  onClick={() => setExpanded(false)}
+                >
+                  {link.icon} {link.label}
+                </Link>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setExpanded(false)}
+                  className={`inline-flex items-center gap-1 border-b-4 pb-1 transition-all duration-300 rounded-b-md
+                    ${
+                      isActive
+                        ? "border-purple-500 text-purple-400"
+                        : "border-transparent hover:border-purple-500 hover:text-purple-400"
+                    }`}
+                >
+                  {link.icon} {link.label}
+                </Link>
+              );
+            })}
+
+            {/* GitHub buttons */}
+            <div className="inline-flex space-x-2 mt-2 md:mt-0">
+              <Link
+                href="https://github.com/adeniji-adebanjo/Portfolio"
+                target="_blank"
+                className="inline-flex items-center space-x-1 border border-purple-500 px-3 py-1 rounded-lg hover:bg-purple-600 transition text-white"
+              >
+                <CgGitFork />
+                <AiFillStar />
+              </Link>
+            </div>
           </div>
         </div>
       </nav>

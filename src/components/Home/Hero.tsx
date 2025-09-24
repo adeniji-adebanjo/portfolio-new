@@ -17,7 +17,7 @@ export default function Hero() {
       <Particle />
 
       {/* Main hero content */}
-      <div className="container mx-auto px-4 py-12 md:py-24">
+      <div className="max-w-6xl mx-auto px-4 pt-16 md:pt-44 py-12 md:py-24">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left text */}
           <div>
@@ -64,7 +64,7 @@ export default function Hero() {
       {/* About + Avatar + Social + Contact */}
       <div
         id="about"
-        className="container mx-auto px-4 py-16 md:py-24 text-white"
+        className="max-w-6xl mx-auto px-4 py-16 md:py-24 text-white"
       >
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* About text */}
