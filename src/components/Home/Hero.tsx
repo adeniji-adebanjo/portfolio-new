@@ -28,12 +28,12 @@ export default function Hero() {
                 👋🏻
               </span>
             </h1>
-            <h1 className="text-3xl md:text-4xl font-bold mb-6">
+            <h1 className="text-6xl md:text-4xl font-bold mb-6">
               I&apos;M
               <strong className="text-purple-400"> ADEBANJO ADENIJI</strong>
             </h1>
 
-            <div className="text-left">
+            <div className="text-left ">
               <Typewriter
                 options={{
                   strings: [

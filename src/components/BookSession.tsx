@@ -18,7 +18,7 @@ const BookSession: React.FC = () => {
           url="https://calendly.com/adebanjo-adeniji/discovery-call-session-with-innkeeper-students"
           rootElement={rootEl}
           text="📅 Schedule a Session"
-          color="transparent"
+          color="#6B21A8"
           textColor="inherit"
         />
       )}
