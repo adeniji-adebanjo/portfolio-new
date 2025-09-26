@@ -41,7 +41,7 @@ export default function Hero() {
                     "Frontend Training Instructor",
                     "Freelancer",
                     "MERN Stack Developer",
-                    "Open Source Contributor",
+                    "Software Tester",
                   ],
                   autoStart: true,
                   loop: true,
@@ -53,11 +53,15 @@ export default function Hero() {
 
           {/* Right image */}
           <div className="flex justify-center md:justify-end">
-            <Image
-              src="https://res.cloudinary.com/ds83mhjcm/image/upload/v1710931324/home-main_agqoq4.svg"
-              alt="home-pic"
-              className="max-h-[450px] w-auto"
-            />
+            <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px]">
+              <Image
+                src="https://res.cloudinary.com/ds83mhjcm/image/upload/v1710931324/home-main_agqoq4.svg"
+                alt="home-pic"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -107,11 +111,15 @@ export default function Hero() {
           {/* Avatar */}
           <div className="flex justify-center md:justify-end pt-8 md:pt-0">
             <Tilt>
-              <Image
-                src="https://res.cloudinary.com/ds83mhjcm/image/upload/v1710931535/Adebanjo_portfolio/avatar_kbhezl.svg"
-                alt="avatar"
-                className="max-w-xs md:max-w-sm"
-              />
+              <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px]">
+                <Image
+                  src="https://res.cloudinary.com/ds83mhjcm/image/upload/v1710931535/Adebanjo_portfolio/avatar_kbhezl.svg"
+                  alt="avatar"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </Tilt>
           </div>
         </div>
