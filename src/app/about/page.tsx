@@ -23,11 +23,15 @@ const About: React.FC = () => {
           </div>
 
           <div className="md:w-1/3 pt-12 md:pt-32">
-            <Image
-              src="https://res.cloudinary.com/ds83mhjcm/image/upload/v1709396526/Adebanjo_portfolio/about_kauvc9.png"
-              alt="about"
-              className="w-full object-contain"
-            />
+            <div className="relative w-full h-[300px] md:h-[400px]">
+              <Image
+                src="https://res.cloudinary.com/ds83mhjcm/image/upload/v1709396526/Adebanjo_portfolio/about_kauvc9.png"
+                alt="about"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
 
