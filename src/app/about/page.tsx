@@ -35,10 +35,13 @@ const About: React.FC = () => {
           </div>
         </div>
 
+        {/* TechStack */}
         <h1 className="text-2xl font-bold text-center pb-8">
           Professional <span className="text-purple-400">Skillset</span>
         </h1>
         <Techstack />
+
+        {/* <Skillset /> */}
 
         <h1 className="text-2xl font-bold text-center pb-8">
           <span className="text-purple-400">Tools</span> I use
